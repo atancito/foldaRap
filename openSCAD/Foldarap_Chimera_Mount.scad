@@ -2,6 +2,11 @@
 //
 //
 
+$fn=100;
+drill=3;
+drillH=6;
+
+
 difference() {
   difference() {
     //pieza base
@@ -14,13 +19,13 @@ difference() {
     //taladro1 de sujecion de la pieza
     translate([10, 0, 6]) {
       rotate([90, 0, 0]){
-        cylinder(d=3, h=20, $fn=20, center=true);
+        cylinder(d=drill, h=20, center=true, $fn=$fn);
       }
     }
     //taladro2 de sujecion de la pieza
     translate([-10, 0, 6]) {
       rotate([90, 0, 0]){
-        cylinder(d=3, h=20, center=true, $fn=20);
+        cylinder(d=drill, h=20, center=true, $fn=$fn);
       }
     }
   }
@@ -30,23 +35,23 @@ difference() {
   //
   //taladro1 de sujecion al Hotend
   translate([0, -5, 0]){
-    cylinder(d=3, h=20, center=true, $fn=20);
+    cylinder(d=drill, h=20, center=true, $fn=$fn);
     translate([0, 0, -0.5]){
-      cylinder(d=6, h=10, center=false, $fn=20);
+      cylinder(d=drillH, h=10, center=false, $fn=$fn);
     }
   }
   //taladro2 de sujecion al Hotend
   translate([4.5, 5, 0]){
-    cylinder(d=3, h=20, center=true, $fn=20);
+    cylinder(d=drill, h=20, center=true, $fn=$fn);
     translate([0, 0, -0.5]){
-      cylinder(d=6, h=10, center=false, $fn=20);
+      cylinder(d=drillH, h=10, center=false, $fn=$fn);
     }
   }
   //taladro3 de sujecion al Hotend
   translate([-4.5, 5, 0]){
-    cylinder(d=3, h=20, center=true, $fn=20);
+    cylinder(d=drill, h=20, center=true, $fn=$fn);
     translate([0, 0, -0.5]){
-      cylinder(d=6, h=10, center=false, $fn=20);
+      cylinder(d=drillH, h=10, center=false, $fn=$fn);
     }
   }
 }
